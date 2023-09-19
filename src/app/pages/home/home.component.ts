@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GameData } from 'src/app/models/gameData';
+import { CardService } from 'src/app/services/card.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  gamesInfo:GameData[] = []
+  constructor(private service:CardService) { }
 
   ngOnInit(): void {
+    this.gamesInfo = this.service.getGamesInfo();
   }
 
 }

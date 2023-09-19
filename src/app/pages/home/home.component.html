@@ -1,6 +1,13 @@
 <main class="home__container">
-    <app-card
-        gameCover="../../../assets/bt-1.jpg"
+    <app-card *ngFor="let g of gamesInfo; let i = index"
+        gameCover="{{ gamesInfo[i].img }}"
+        gameLabel="{{ gamesInfo[i].label }}"
+        gamePrice="{{ gamesInfo[i].price }}"
+        gameType="{{ gamesInfo[i].type }}"
+    >
+    </app-card>
+    <!-- <app-card
+        gameCover="{{ gamesInfo[0].img }}"
         gameLabel="EXCLUSIVE"
         gamePrice="R$ 99,99"
         gameType="Digital PS4"
@@ -26,5 +33,5 @@
         gamePrice="R$ 149,99"
         gameType="Digital PS5"
     >
-    </app-card>
+    </app-card> -->
 </main>
